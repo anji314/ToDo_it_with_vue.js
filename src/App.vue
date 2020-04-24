@@ -1,60 +1,53 @@
 <template>
-  <div id="app">
-    <img src="./assets/logo.png">
-    <h1>{{ msg }}</h1>
-    <h2>Essential Links</h2>
-    <ul>
-      <li><a href="https://vuejs.org" target="_blank">Core Docs</a></li>
-      <li><a href="https://forum.vuejs.org" target="_blank">Forum</a></li>
-      <li><a href="https://chat.vuejs.org" target="_blank">Community Chat</a></li>
-      <li><a href="https://twitter.com/vuejs" target="_blank">Twitter</a></li>
-    </ul>
-    <h2>Ecosystem</h2>
-    <ul>
-      <li><a href="http://router.vuejs.org/" target="_blank">vue-router</a></li>
-      <li><a href="http://vuex.vuejs.org/" target="_blank">vuex</a></li>
-      <li><a href="http://vue-loader.vuejs.org/" target="_blank">vue-loader</a></li>
-      <li><a href="https://github.com/vuejs/awesome-vue" target="_blank">awesome-vue</a></li>
-    </ul>
-  </div>
+
+<div id="app">
+<TodoHeader></TodoHeader>
+<TodoInput></TodoInput>
+<TodoList></TodoList>
+<TodoFooter></TodoFooter>
+</div>
+
 </template>
 
 <script>
-export default {
-  name: 'app',
-  data () {
-    return {
-      msg: 'Welcome to Your Vue.js App'
+//  위에 생성한 컴포넌트 내용을 올바르게 인식하려면 스크립트 부분에 파일을 불러오는 코드를 추가해야 한다.
+// import 불러올 파일의 내용이 담길 객체 from '불러올 파일 위치';
+import TodoHeader from './components/TodoHeader.vue';
+import TodoInput from './components/TodoInput';
+import TodoList from './components/TodoList';
+import TodoFooter from './components/TodoFooter';
+
+/*
+컴포넌트 등록 방법
+components:{
+    '컴포넌트 이름':컴포넌트 내용
+}
+*/
+export default{
+
+    components:{
+        'TodoHeader':TodoHeader,
+        'TodoInput':TodoInput,
+        'TodoList':TodoList,
+        'TodoFooter':TodoFooter
     }
-  }
+
 }
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+body{
+    text-align:center;
+    background-color:#F6F6F8;
 }
-
-h1, h2 {
-  font-weight: normal;
+input{
+    border-style:groove;
+    width:200px;
 }
-
-ul {
-  list-style-type: none;
-  padding: 0;
+button{
+    border-style:groove;
 }
-
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-
-a {
-  color: #42b983;
+.shadow{
+    box-shadow:5px 10px 10px rgba(0,0,0,0.03)
 }
 </style>
