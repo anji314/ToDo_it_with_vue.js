@@ -8,7 +8,8 @@
 export default{
     methods:{
         clearTodo(){
-            localStorage.clear();
+            this.$emit('removeAll'); // 상위 컴포넌트로 보내는 이벤트
+            // localStorage.clear();
         }
     }
 
