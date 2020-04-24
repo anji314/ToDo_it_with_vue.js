@@ -20,7 +20,7 @@ methods: {
      //setItem()은 로컬 스토리지에 데이터를 추가하는 API 
      // (키,값)
     addTodo(){
-        if(this.newTodoItem != ""){
+        if(this.newTodoItem !=''){
             var value = this.newTodoItem&&this.newTodoItem.trim(); //인풋 박스 앞뒤 공백 문자열 제거
             localStorage.setItem(value,value);
             this.clearInput();
